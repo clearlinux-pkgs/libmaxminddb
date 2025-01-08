@@ -6,10 +6,10 @@
 # autospec commit: f4a13a5
 #
 Name     : libmaxminddb
-Version  : 1.12.0
-Release  : 15
-URL      : https://github.com/maxmind/libmaxminddb/releases/download/1.12.0/libmaxminddb-1.12.0.tar.gz
-Source0  : https://github.com/maxmind/libmaxminddb/releases/download/1.12.0/libmaxminddb-1.12.0.tar.gz
+Version  : 1.12.1
+Release  : 16
+URL      : https://github.com/maxmind/libmaxminddb/releases/download/1.12.1/libmaxminddb-1.12.1.tar.gz
+Source0  : https://github.com/maxmind/libmaxminddb/releases/download/1.12.1/libmaxminddb-1.12.1.tar.gz
 Summary  : C library for the MaxMind DB file format
 Group    : Development/Tools
 License  : Apache-2.0 LGPL-3.0 MIT
@@ -78,10 +78,10 @@ man components for the libmaxminddb package.
 
 
 %prep
-%setup -q -n libmaxminddb-1.12.0
-cd %{_builddir}/libmaxminddb-1.12.0
+%setup -q -n libmaxminddb-1.12.1
+cd %{_builddir}/libmaxminddb-1.12.1
 pushd ..
-cp -a libmaxminddb-1.12.0 buildavx2
+cp -a libmaxminddb-1.12.1 buildavx2
 popd
 
 %build
@@ -89,7 +89,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1736299213
+export SOURCE_DATE_EPOCH=1736378031
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -143,10 +143,11 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1736299213
+export SOURCE_DATE_EPOCH=1736378031
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libmaxminddb
 cp %{_builddir}/libmaxminddb-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/libmaxminddb/2b8b815229aa8a61e483fb4ba0588b8b6c491890 || :
+cp %{_builddir}/libmaxminddb-%{version}/NOTICE %{buildroot}/usr/share/package-licenses/libmaxminddb/0b03708a2a9113e884088ee0a4c42d3a01525fe5 || :
 cp %{_builddir}/libmaxminddb-%{version}/t/libtap/COPYING %{buildroot}/usr/share/package-licenses/libmaxminddb/f45ee1c765646813b442ca58de72e20a64a7ddba || :
 cp %{_builddir}/libmaxminddb-%{version}/t/maxmind-db/LICENSE-APACHE %{buildroot}/usr/share/package-licenses/libmaxminddb/de33ead2bee64352544ce0aa9e410c0c44fdf7d9 || :
 cp %{_builddir}/libmaxminddb-%{version}/t/maxmind-db/LICENSE-MIT %{buildroot}/usr/share/package-licenses/libmaxminddb/6bc5bdae464255ca81b3f581488ceb76d436c35e || :
@@ -197,6 +198,7 @@ GOAMD64=v2
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/libmaxminddb/0b03708a2a9113e884088ee0a4c42d3a01525fe5
 /usr/share/package-licenses/libmaxminddb/2b8b815229aa8a61e483fb4ba0588b8b6c491890
 /usr/share/package-licenses/libmaxminddb/6bc5bdae464255ca81b3f581488ceb76d436c35e
 /usr/share/package-licenses/libmaxminddb/de33ead2bee64352544ce0aa9e410c0c44fdf7d9
