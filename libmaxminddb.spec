@@ -6,10 +6,10 @@
 # autospec commit: f4a13a5
 #
 Name     : libmaxminddb
-Version  : 1.12.1
-Release  : 16
-URL      : https://github.com/maxmind/libmaxminddb/releases/download/1.12.1/libmaxminddb-1.12.1.tar.gz
-Source0  : https://github.com/maxmind/libmaxminddb/releases/download/1.12.1/libmaxminddb-1.12.1.tar.gz
+Version  : 1.12.2
+Release  : 17
+URL      : https://github.com/maxmind/libmaxminddb/releases/download/1.12.2/libmaxminddb-1.12.2.tar.gz
+Source0  : https://github.com/maxmind/libmaxminddb/releases/download/1.12.2/libmaxminddb-1.12.2.tar.gz
 Summary  : C library for the MaxMind DB file format
 Group    : Development/Tools
 License  : Apache-2.0 LGPL-3.0 MIT
@@ -78,10 +78,10 @@ man components for the libmaxminddb package.
 
 
 %prep
-%setup -q -n libmaxminddb-1.12.1
-cd %{_builddir}/libmaxminddb-1.12.1
+%setup -q -n libmaxminddb-1.12.2
+cd %{_builddir}/libmaxminddb-1.12.2
 pushd ..
-cp -a libmaxminddb-1.12.1 buildavx2
+cp -a libmaxminddb-1.12.2 buildavx2
 popd
 
 %build
@@ -89,7 +89,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1736378031
+export SOURCE_DATE_EPOCH=1736812551
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -143,7 +143,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1736378031
+export SOURCE_DATE_EPOCH=1736812551
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libmaxminddb
 cp %{_builddir}/libmaxminddb-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/libmaxminddb/2b8b815229aa8a61e483fb4ba0588b8b6c491890 || :
